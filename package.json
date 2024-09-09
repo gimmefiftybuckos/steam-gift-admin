@@ -1,0 +1,52 @@
+{
+    "name": "admin",
+    "type": "commonjs",
+    "private": "true",
+    "scripts": {
+        "prettier": "prettier --write .",
+        "lint": "eslint --cache .",
+        "prepare": "husky",
+        "start:dev": "webpack serve --config webpack.dev.js",
+        "start:prod": "webpack serve --config webpack.prod.js",
+        "build:dev": "webpack build --config webpack.dev.js",
+        "build:prod": "webpack build --config webpack.prod.js",
+        "typecheck": "tsc --noEmit",
+        "test": "npm run typecheck && npm run lint"
+    },
+    "lint-staged": {
+        "*": [
+            "npm run prettier",
+            "git add -A"
+        ]
+    },
+    "devDependencies": {
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
+        "@typescript-eslint/eslint-plugin": "^7.14.1",
+        "@typescript-eslint/parser": "^7.14.1",
+        "dotenv-webpack": "^8.1.0",
+        "eslint": "^8.57.0",
+        "eslint-plugin-react": "^7.34.3",
+        "html-webpack-plugin": "^5.6.0",
+        "husky": "^9.0.11",
+        "lint-staged": "^15.2.7",
+        "prettier": "^3.3.2",
+        "ts-loader": "^9.5.1",
+        "typescript": "^5.5.2",
+        "webpack": "^5.92.1",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^5.0.4"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.11.4",
+        "@emotion/styled": "^11.11.5",
+        "@mui/icons-material": "^5.16.0",
+        "@mui/material": "^5.16.0",
+        "@mui/styled-engine-sc": "^6.0.0-alpha.18",
+        "axios": "^1.7.2",
+        "dotenv": "^16.4.5",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "styled-components": "^6.1.11"
+    }
+}
